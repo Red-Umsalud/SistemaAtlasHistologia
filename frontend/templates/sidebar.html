@@ -33,16 +33,13 @@
               id="submenu1"
               data-bs-parent="#menu"
             >
+            {% for item in lista_epitelio %}
               <li class="w-100">
                 <a href="#" class="nav-link px-0">
-                  <span class="d-none d-sm-inline">Item</span> 1
+                    <span class="d-none d-sm-inline">{{ item }}
                 </a>
               </li>
-              <li>
-                <a href="#" class="nav-link px-0">
-                  <span class="d-none d-sm-inline">Item</span> 2
-                </a>
-              </li>
+            {% endfor %}
             </ul>
           </li>
           <li>
@@ -148,22 +145,9 @@
       </div>
     </div>
     <div class="col py-3">
-      <h1>CONTENIDO</h1>
-
-      <h3>Left Sidebar with Submenus</h3>
-      <p class="lead">
-        An example 2-level sidebar with collasible menu items. The menu
-        functions like an "accordion" where only a single menu is be open at a
-        time. While the sidebar itself is not toggle-able, it does responsively
-        shrink in width on smaller screens.
-      </p>
-      <ul class="list-unstyled">
-        <li>
-          <h5>Responsive</h5>
-          shrinks in width, hides text labels and collapses to icons only on
-          mobile
-        </li>
-      </ul>
+      {% block focuscontent %}
+      {% include 'prologo.html' %}
+      {% endblock focuscontent %}
     </div>
   </div>
 </div>
