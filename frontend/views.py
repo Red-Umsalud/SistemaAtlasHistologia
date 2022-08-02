@@ -266,7 +266,7 @@ def mainmenu(request):
 def show(request, pk):
     context = DIC
     context['pk'] = pk
-    for i in range(1,160):
+    for i in range(1,194):
         if int(pk) == i:
             context['ruta_imagen'] = f'img/{i}.jpg'
             break
