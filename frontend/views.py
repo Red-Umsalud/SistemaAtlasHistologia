@@ -1,5 +1,3 @@
-from PIL import Image
-from base64 import b64encode
 from django.shortcuts import render
 
 # Create your views here.
