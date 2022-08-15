@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'SistemaAtlasHistologia.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'test': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db_histologia',
         'USER': 'galo',
@@ -83,7 +83,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432'
     },
-    'test':{
+    'default':{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3'
     }
