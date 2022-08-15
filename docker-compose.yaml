@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: galo
+      POSTGRES_DB: db_histologia
+      DATABASE_HOST: 127.0.0.1
+    volumes:
+      - ./database:/var/lib/postgresql/data
