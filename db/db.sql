@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 9.x                               */
-/* Created on:     5/8/2022 09:34:20                            */
+/* Created on:     15/8/2022 12:26:17                           */
 /*==============================================================*/
 
 
@@ -15,6 +15,12 @@ drop index TIENE_FK;
 drop index FICHA_PK;
 
 drop table FICHA;
+
+drop index TIENE_FOTO_FK;
+
+drop index FOTOGRAFIA_PK;
+
+drop table FOTOGRAFIA;
 
 drop index CONTIENE_FK;
 
@@ -48,8 +54,6 @@ create table FICHA (
    NUMERO               INT4                 not null,
    TITULO               VARCHAR(1024)        not null,
    CONTENIDO            TEXT                 not null,
-   NOMBRE_FOTO          VARCHAR(256)         not null,
-   RUTA_FOTO            VARCHAR(512)         not null,
    constraint PK_FICHA primary key (ID_FICHA)
 );
 
@@ -72,6 +76,31 @@ ID_ELEMENTO
 /*==============================================================*/
 create  index TIENE_FICHA_FK on FICHA (
 ID_SUBELEMENTO
+);
+
+/*==============================================================*/
+/* Table: FOTOGRAFIA                                            */
+/*==============================================================*/
+create table FOTOGRAFIA (
+   ID_FOTOGRAFIA        SERIAL               not null,
+   ID_FICHA             INT4                 null,
+   RUTA_FOTOGRAFIA      VARCHAR(1024)        not null,
+   NOMBRE               VARCHAR(256)         not null,
+   constraint PK_FOTOGRAFIA primary key (ID_FOTOGRAFIA)
+);
+
+/*==============================================================*/
+/* Index: FOTOGRAFIA_PK                                         */
+/*==============================================================*/
+create unique index FOTOGRAFIA_PK on FOTOGRAFIA (
+ID_FOTOGRAFIA
+);
+
+/*==============================================================*/
+/* Index: TIENE_FOTO_FK                                         */
+/*==============================================================*/
+create  index TIENE_FOTO_FK on FOTOGRAFIA (
+ID_FICHA
 );
 
 /*==============================================================*/
@@ -106,6 +135,11 @@ alter table FICHA
 alter table FICHA
    add constraint FK_FICHA_TIENE_FIC_SUBELEME foreign key (ID_SUBELEMENTO)
       references SUBELEMENTO (ID_SUBELEMENTO)
+      on delete restrict on update restrict;
+
+alter table FOTOGRAFIA
+   add constraint FK_FOTOGRAF_TIENE_FOT_FICHA foreign key (ID_FICHA)
+      references FICHA (ID_FICHA)
       on delete restrict on update restrict;
 
 alter table SUBELEMENTO
