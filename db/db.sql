@@ -1,7 +1,6 @@
--- Active: 1660585423839@@127.0.0.1@5432@db_histologia
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 9.x                               */
-/* Created on:     15/8/2022 13:37:28                           */
+/* Created on:     16/8/2022 13:23:43                           */
 /*==============================================================*/
 
 
@@ -53,8 +52,6 @@ ELE_ID_ELEMENTO
 create table FICHA (
    ID_FICHA             SERIAL               not null,
    ID_ELEMENTO          INT4                 null,
-   NUMERO               INT4                 not null,
-   TITULO               VARCHAR(1024)        not null,
    CONTENIDO            TEXT                 not null,
    constraint PK_FICHA primary key (ID_FICHA)
 );

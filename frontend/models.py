@@ -17,17 +17,22 @@ class Elemento(models.Model):
         managed = True
         db_table = 'elemento'
 
+    def __str__(self):
+        return f'{self.id_elemento} - {self.nombre}'
+
 
 class Ficha(models.Model):
     id_ficha = models.AutoField(primary_key=True)
     id_elemento = models.ForeignKey(Elemento, models.DO_NOTHING, db_column='id_elemento', blank=True, null=True)
-    numero = models.IntegerField()
-    titulo = models.CharField(max_length=1024)
-    contenido = models.TextField()
+    contenido = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = True
         db_table = 'ficha'
+    
+    def __str__(self):
+        backslash = '\n'
+        return f'{self.id_elemento} - {str(self.contenido).split(backslash)[0]}'
 
 
 class Fotografia(models.Model):

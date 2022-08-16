@@ -1,19 +1,18 @@
 -- Active: 1660582233505@@127.0.0.1@3306
-INSERT INTO elemento(nombre)
-VALUES
-('Prologo'),
-('Epitelio'),
-('Glándulas'),
-('Tejidos'),
-('Sistemas'),
-('Aparatos'),
-('Sentidos Especiales'),
-('Índice Alfabético'),
-('Evaluaciones'),
-('Bibliografía');
+-- Ingreso de elementos al sistema
+INSERT INTO elemento(nombre) VALUES
+    ('Prologo'),
+    ('Epitelio'),
+    ('Glándulas'),
+    ('Tejidos'),
+    ('Sistemas'),
+    ('Aparatos'),
+    ('Sentidos Especiales'),
+    ('Índice Alfabético'),
+    ('Evaluaciones'),
+    ('Bibliografía');
 
-INSERT INTO elemento(nombre,ele_id_elemento)
-VALUES
+INSERT INTO elemento(nombre,ele_id_elemento) VALUES
     ('Conectivo', 4),
     ('Cartilaginoso', 4),
     ('Óseo', 4),
@@ -262,4 +261,11 @@ INSERT INTO elemento(nombre, ele_id_elemento) VALUES
 INSERT INTO elemento(nombre, ele_id_elemento) VALUES
     ('Órgano de Corti', 27),
     ('Pabellón de oreja', 27)
+
+-- Ingreso de fichas de informacion al sistema (Mejor desde frontend)
+
+INSERT INTO ficha(id_elemento, contenido) VALUES
+    (1,'Hola mundo a cambiar desde frontend');
+
+
 
