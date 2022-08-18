@@ -38,9 +38,12 @@ class Ficha(models.Model):
 class Fotografia(models.Model):
     id_fotografia = models.AutoField(primary_key=True)
     id_ficha = models.ForeignKey(Ficha, models.DO_NOTHING, db_column='id_ficha', blank=True, null=True)
-    fotografia = models.ImageField(upload_to='static/photos', blank=True, null=True)
+    fotografia = models.ImageField(upload_to='frontend/static/photos', blank=True, null=True)
     nombre = models.CharField(max_length=256)
 
     class Meta:
         managed = True
         db_table = 'fotografia'
+
+    def __str__(self):
+        return f'{self.id_fotografia} - {self.nombre}'
