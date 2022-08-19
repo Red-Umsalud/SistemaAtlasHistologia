@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from tinymce import models as tinymce_models
 
 class Elemento(models.Model):
     id_elemento = models.AutoField(primary_key=True)
@@ -24,7 +24,7 @@ class Elemento(models.Model):
 class Ficha(models.Model):
     id_ficha = models.AutoField(primary_key=True)
     id_elemento = models.ForeignKey(Elemento, models.DO_NOTHING, db_column='id_elemento', blank=True, null=True)
-    contenido = models.TextField(blank=True, null=True)
+    contenido = tinymce_models.HTMLField(blank=True, null=True)
 
     class Meta:
         managed = True
