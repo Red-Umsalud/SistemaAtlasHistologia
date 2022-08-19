@@ -1,9 +1,18 @@
 {% extends "base.html" %}
-
 {% block content %}
 <h1>Aqui entra el contenido de la pagina principal</h1>
-<h2> Hero</h2>
-{% include 'hero.html'%}
+<h2>Hero</h2>
+{% for ficha in fichas %}
+<div class="container">
+  <div class="card">
+      <img src="{{ ficha.fotografia.url }}" class="card-img-top" alt="" />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">{{ ficha.contenido|safe }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+{% endfor%} {% include 'hero.html'%}
 <h2>autores</h2>
 {% endblock content %}
-

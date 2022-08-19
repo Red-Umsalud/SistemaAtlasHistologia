@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Ficha, Elemento, Fotografia
 # Create your views here.
 DIC = {
     'prologo': '''
@@ -254,8 +254,10 @@ DIC = {
 }
 
 def home(request):
-    context = DIC
-    return render(request,'index.html',context=context)
+    fotografias = Fotografia.objects.all()[:3]
+    for i in fotografias:
+        print(i.fotografia.url)
+    return render(request,'index.html',context={'fichas':fotografias})
 
 def mainmenu(request):
     context = DIC
