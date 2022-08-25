@@ -254,10 +254,10 @@ DIC = {
 }
 
 def home(request):
-    fotografias = Fotografia.objects.all()[:3]
+    fotografias = Fotografia.objects.all()
     for i in fotografias:
         print(i.fotografia.url)
-    return render(request,'index.html',context={'fichas':fotografias})
+    return render(request,'index.html',context={'fotografias':fotografias})
 
 def mainmenu(request):
     context = DIC

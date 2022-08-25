@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <h1>Aqui entra el contenido de la pagina principal</h1>
 <h2>Hero</h2>
-{% for ficha in fichas %}
+{% for fotografia in fotografias %}
 <div class="container">
   <div class="card">
-      <img src="{{ ficha.fotografia.url }}" class="card-img-top" alt="" />
+      <img src="..{{ fotografia.fotografia.url }}" class="card-img-top" alt="" />
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">{{ ficha.contenido|safe }}</p>
+        <h5 class="card-title">{{ fotografia.nombre }}</h5>
+      <p class="card-text">{{ fotografia.id_ficha.contenido|safe }}</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
