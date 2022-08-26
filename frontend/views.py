@@ -260,8 +260,15 @@ def home(request):
     return render(request,'index.html',context={'fotografias':fotografias})
 
 def mainmenu(request):
-    context = DIC
-    return render(request,'menu.html',context=context)
+    #principal = Elemento.objects.filter(ele_id_elemento__isnull=True)
+    principal = Elemento.objects.all()
+    secundario = Elemento.objects.all()
+    terciario = Elemento.objects.all()
+
+    context = {'principal':principal,
+               'secundario':secundario,'terciario':terciario}
+
+    return render(request,'menu.html',context)
 
 def show(request, pk):
     context = DIC

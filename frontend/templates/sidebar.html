@@ -1,200 +1,210 @@
+{% for elemento in principal %}
+    {% if elemento.ele_id_elemento == None %}
+    <div class="container"><h1>{{ elemento.nombre }}</h1></div>
+    {% for item in secundario %}
+        {% if item.ele_id_elemento.id_elemento == elemento.id_elemento %}
+        <div class="container"> <h3> {{item.nombre}} </h3></div>
+        {% for elemento in terciario %}
+        {% if elemento.ele_id_elemento.id_elemento == item.id_elemento%}
+        <div class="container">    <h5>{{elemento.nombre}} </h5> </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+{% endfor%}
 <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-      <div
-        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
-      >
-        <a
-          href="/"
-          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-        >
-        </a>
-        <ul
-          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-          id="menu"
-        >
-          <li class="nav-item">
-            <a href="#" class="nav-link align-middle px-0">
-              <i class="fs-4 bi-grid"></i>
-              <span class="ms-1 d-none d-sm-inline">Prólogo</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="#submenu1"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Epitelio</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu1"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_epitelio %}
-              <li class="w-100">
-                  <a href="{% url 'show' pk=item.1 %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{ item.0 }}
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 </a>
-              </li>
-            {% endfor %}
-            </ul>
-          </li>
+                <ul
+                    class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                    id="menu"
+                    >
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-grid"></i>
+                            <span class="ms-1 d-none d-sm-inline">Prólogo</span>
+                        </a>
+                    </li>
 
-          <li>
-            <a
-              href="#submenu2"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Glándulas</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu2"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_glandulas %}
-              <li class="w-100">
-                <a href="{% url 'show' pk=item.1 %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{ item.0 }}
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          </li>
+                    <li>
+                        <a
+                            href="#submenu1"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Epitelio</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu1"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_epitelio %}
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item.1 %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{ item.0 }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-          <li>
-            <a
-              href="#submenu3"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Tejidos</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu3"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_tejidos %} 
-            <li class="w-100">
-                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{ item }}</a
-                >
-              </li>
-            {% endfor %}
-            </ul>
-          </li>
+                    <li>
+                        <a
+                            href="#submenu2"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Glándulas</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu2"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_glandulas %}
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item.1 %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{ item.0 }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-          <li>
-            <a
-              href="#submenu4"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Sistemas</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu4"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_sistemas %}
-              <li class="w-100">
-                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{item}}</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
+                    <li>
+                        <a
+                            href="#submenu3"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Tejidos</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu3"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_tejidos %} 
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{ item }}</a
+                                    >
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-          <li>
-            <a
-              href="#submenu5"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Aparatos</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu5"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_aparatos %}
+                    <li>
+                        <a
+                            href="#submenu4"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Sistemas</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu4"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_sistemas %}
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{item}}</a
+                                    >
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-              <li class="w-100">
-                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{item}}</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
+                    <li>
+                        <a
+                            href="#submenu5"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Aparatos</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu5"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_aparatos %}
 
-          <li>
-            <a
-              href="#submenu6"
-              data-bs-toggle="collapse"
-              class="nav-link px-0 align-middle"
-            >
-              <i class="fs-4 bi-egg-fried"></i>
-              <span class="ms-1 d-none d-sm-inline">Sistemas Especiales</span>
-            </a>
-            <ul
-              class="collapse nav flex-column ms-1"
-              id="submenu6"
-              data-bs-parent="#menu"
-            >
-            {% for item in lista_sistemas %}
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{item}}</a
+                                    >
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-              <li class="w-100">
-                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
-                    <span class="d-none d-sm-inline">{{ item }}</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
+                    <li>
+                        <a
+                            href="#submenu6"
+                            data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle"
+                            >
+                            <i class="fs-4 bi-egg-fried"></i>
+                            <span class="ms-1 d-none d-sm-inline">Sistemas Especiales</span>
+                        </a>
+                        <ul
+                            class="collapse nav flex-column ms-1"
+                            id="submenu6"
+                            data-bs-parent="#menu"
+                            >
+                            {% for item in lista_sistemas %}
 
-          <li>
-            <a href="#" class="nav-link px-0 align-middle">
-              <i class="fs-4 bi-grid"></i>
-              <span class="ms-1 d-none d-sm-inline">Índice Alfabético</span>
-            </a>
-          </li>
+                            <li class="w-100">
+                                <a href="{% url 'show' pk=item %}" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline">{{ item }}</a
+                                    >
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
 
-          <li>
-            <a href="#" class="nav-link px-0 align-middle">
-              <i class="fs-4 bi-grid"></i>
-              <span class="ms-1 d-none d-sm-inline">Evaluaciones</span>
-            </a>
-          </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i>
+                            <span class="ms-1 d-none d-sm-inline">Índice Alfabético</span>
+                        </a>
+                    </li>
 
-          <li>
-            <a href="#" class="nav-link px-0 align-middle">
-              <i class="fs-4 bi-grid"></i>
-              <span class="ms-1 d-none d-sm-inline">Bibliografía</span>
-            </a>
-          </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i>
+                            <span class="ms-1 d-none d-sm-inline">Evaluaciones</span>
+                        </a>
+                    </li>
 
-        </ul>
-        <hr />
-      </div>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i>
+                            <span class="ms-1 d-none d-sm-inline">Bibliografía</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <hr />
+            </div>
+        </div>
+        <div class="col py-3">
+            {% block focuscontent %}
+            {% include 'content.html' %}
+            {% endblock focuscontent %}
+        </div>
     </div>
-    <div class="col py-3">
-      {% block focuscontent %}
-      {% include 'content.html' %}
-      {% endblock focuscontent %}
-    </div>
-  </div>
 </div>
