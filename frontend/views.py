@@ -3,15 +3,12 @@ from .models import Ficha, Elemento, Fotografia
 # Create your views here.
 
 def home(request):
-    fotografias = Fotografia.objects.all()
-    for i in fotografias:
-        print(i.fotografia.url)
-    return render(request,'index.html',context={'fotografias':fotografias})
+    return render(request,'index.html', {})
 
 def mainmenu(request):
     principal = Elemento.objects.all()
     context = {'principal':principal}
-    return render(request,'menu.html',context)
+    return render(request,'menu.html', context)
 
 def show(request, pk):
     context = {}
