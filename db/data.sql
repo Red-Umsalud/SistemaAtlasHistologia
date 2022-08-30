@@ -267,5 +267,4 @@ INSERT INTO elemento(nombre, ele_id_elemento) VALUES
 INSERT INTO ficha(id_elemento, contenido) VALUES
     (1,'Hola mundo a cambiar desde frontend');
 
-
-
+SELECT * FROM elemento main join elemento sub on main.id_elemento = sub.ele_id_elemento;

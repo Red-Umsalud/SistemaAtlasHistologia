@@ -1,4 +1,4 @@
-.h1 {
+h1 {
   color: green;
 }
 
@@ -8,11 +8,4 @@ h3 {
 
 h5 {
   color: red;
-}
-
-.nav-link[data-toggle].collapsed:after {
-  content: " ▾";
-}
-.nav-link[data-toggle]:not(.collapsed):after {
-  content: " ▴";
 }

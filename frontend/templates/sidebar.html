@@ -1,62 +1,49 @@
-<!-- Extraido de la pagina https://www.codeply.com/go/q0b6ILuRyx/bootstrap-4-vertical-sidebar-nav-with-submenu -->
+<!--Obtenido de https://dev.to/codeply/bootstrap-5-sidebar-examples-38pb-->
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-2 collapse show d-md-flex bg-light pt-2 pl-0 min-vh-100" id="sidebar">
-            <ul class="nav flex-column flex-nowrap overflow-hidden">
-                {% for elemento in principal %}
-                {% if elemento.ele_id_elemento == None %}
-                <li class="nav-item">
-                    <a class="nav-link collapsed text-truncate"
-                        href="#submenu{{elemento.id_elemento}}"
-                        data-toggle="collapse"
-                        data-target="#submenu{{elemento.id_elemento}}">
-                        <i class="fa fa-table"></i>
-                        <span class="d-none d-sm-inline">{{elemento.nombre}}</span>
-                    </a>
-                    <div class="collapse" id="submenu{{elemento.id_elemento}}"
-                        aria-expanded="false">
-                        <ul class="flex-column pl-2 nav">    
-                            {% for item in principal %}
-                            {% if item.ele_id_elemento.id_elemento == elemento.id_elemento %}
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate collapsed py-1"
-                                    href="#submenu{{elemento.id_elemento}}sub{{item.id_elemento}}" data-toggle="collapse"
-                                    data-target="#submenu{{elemento.id_elemento}}sub{{item.id_elemento}}">
-                                    <span>{{item.nombre}}</span>
-                                </a>
-
-                                <div class="collapse"
-                                    id="submenu{{elemento.id_elemento}}sub{{item.id_elemento}}"
-                                    aria-expanded="false">
-                                    <ul class="flex-column nav pl-4">
-                                        {% for elem in principal %}
-                                        {% if elem.ele_id_elemento.id_elemento == item.id_elemento%}
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1 text-truncate" href="#">
-                                                <i class="fa fa-fw fa-clock-o"></i>
-                                                {{elem.nombre}} </a>
-                                        </li>
-
-                                        {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Inicio</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    {% for elemento in principal %}
+                    {% if elemento.ele_id_elemento == None %}
+                    <li class="nav-item">
+                        <a href="#submenu{{ elemento.id_elemento }}" data-bs-toggle="collapse" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">{{ elemento.nombre }}</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu{{ elemento.id_elemento }}" data-bs-parent="#menu">
+                        {% for item in principal %}
+                        {% if item.ele_id_elemento.id_elemento == elemento.id_elemento %}
+                        <li>
+                            <a href="#submenu{{ elemento.id_elemento }}sub{{ item.id_elemento }}" data-bs-toggle="collapse" class="nav-link px-0"><i class= "fs-4 bi-clock"></i> <span class="d-none d-sm-inline">{{ item.nombre }}</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu{{ elemento.id_elemento }}sub{{ item.id_elemento }}" data-bs-parent="#submenu{{ elemento.id_elemento }}">
+                                {% for elem in principal %}
+                                {% if elem.ele_id_elemento.id_elemento == item.id_elemento %}
+                                    <li class="w-100">
+                                        <a href="{{ elem.id_elemento }}" class="nav-link px-0"> <span class="d-none d-sm-inline">{{ elem.nombre }}</span></a>
+                                    </li>                               
+                                {% endif %}
+                                {% endfor %}
+                            </ul>                        
+                        </li>
                         {% endif %}
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="col py-3">
+            Este contenido se debe modificar al hacer click en el menu
         </div>
     </div>
 </div>
-
 {% block focuscontent %}
 {% include 'content.html' %}
 {% endblock focuscontent %}
-</div>
-</div>
-</div>
