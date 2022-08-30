@@ -1,5 +1,7 @@
 {% load static %}
-{{ pk }}
 
-{{ ruta_imagen }}
-<img src="{% static ruta_imagen %}" />
+{% for fotografia in elemento %}
+    <div class="container"><h1>{{ fotografia.id_ficha.id_elemento.nombre }}</h1></div>
+    <div class="container">{{ fotografia.id_ficha.contenido | safe }}</div>
+    <img src="../{{ fotografia.fotografia }}"/>
+{% endfor %}
