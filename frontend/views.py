@@ -11,14 +11,12 @@ def home(request):
 def mainmenu(request):
     principal = Elemento.objects.all()
     context = {'principal':principal}
-
     return render(request,'menu.html',context)
 
 def show(request, pk):
     context = {}
     fotografias = Fotografia.objects.select_related('id_ficha').filter(id_ficha__id_elemento=pk)
-    for i in fotografias:
-        print(i)
     context['elemento'] = fotografias
-    #context['pk']= int(pk)
-    return render(request,'content.html', context=context)
+    principal = Elemento.objects.all()
+    context['principal'] = principal
+    return render(request,'menu.html', context=context)
