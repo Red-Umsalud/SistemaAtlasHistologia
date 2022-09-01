@@ -442,6 +442,7 @@ INSERT INTO django_admin_log VALUES(408,'2022-08-19 18:16:27.681797','2',replace
 INSERT INTO django_admin_log VALUES(409,'2022-08-19 18:17:17.538327','3',replace('29 - Epitelio cúbico simple - <p>Epitelio c&uacute;bico simple. T&uacute;bulos renales. PAS.</p>\r','\r',char(13)),'[{"changed": {"fields": ["Contenido"]}}]',8,1,2);
 INSERT INTO django_admin_log VALUES(410,'2022-08-19 18:19:02.480457','2',replace('28 - Epitelio plano simple - <p><strong>Epitelio plano simple. Endocardio. H.E.</strong></p>\r','\r',char(13)),'[{"changed": {"fields": ["Contenido"]}}]',8,1,2);
 INSERT INTO django_admin_log VALUES(411,'2022-08-19 18:19:14.673058','3',replace('29 - Epitelio cúbico simple - <p><strong>Epitelio c&uacute;bico simple. T&uacute;bulos renales. PAS.</strong></p>\r','\r',char(13)),'[{"changed": {"fields": ["Contenido"]}}]',8,1,2);
+INSERT INTO django_admin_log VALUES(412,'2022-09-01 18:50:55.623514','195','195 - prologo','[{"added": {}}]',9,1,1);
 CREATE TABLE IF NOT EXISTS "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL);
 INSERT INTO django_content_type VALUES(1,'admin','logentry');
 INSERT INTO django_content_type VALUES(2,'auth','permission');
@@ -491,7 +492,7 @@ INSERT INTO auth_permission VALUES(35,9,'delete_fotografia','Can delete fotograf
 INSERT INTO auth_permission VALUES(36,9,'view_fotografia','Can view fotografia');
 CREATE TABLE IF NOT EXISTS "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(150) NOT NULL UNIQUE);
 CREATE TABLE IF NOT EXISTS "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "last_name" varchar(150) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "first_name" varchar(150) NOT NULL);
-INSERT INTO auth_user VALUES(1,'pbkdf2_sha256$320000$L8a9zuPklgHGntgYENgHWh$Vz8e4wKjgpOOduhVAzyaf0xB/cb6Utl6OtgPQhd2piE=','2022-08-25 18:43:41.519371',1,'Galo','','giotheasy@gmail.com',1,1,'2022-08-16 13:28:39.194796','');
+INSERT INTO auth_user VALUES(1,'pbkdf2_sha256$320000$L8a9zuPklgHGntgYENgHWh$Vz8e4wKjgpOOduhVAzyaf0xB/cb6Utl6OtgPQhd2piE=','2022-09-01 18:50:13.387722',1,'Galo','','giotheasy@gmail.com',1,1,'2022-08-16 13:28:39.194796','');
 CREATE TABLE IF NOT EXISTS "elemento" ("id_elemento" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "nombre" varchar(256) NOT NULL, "ele_id_elemento" integer NULL REFERENCES "elemento" ("id_elemento") DEFERRABLE INITIALLY DEFERRED);
 INSERT INTO elemento VALUES(1,'Prólogo',NULL);
 INSERT INTO elemento VALUES(2,'Epitelio',NULL);
@@ -722,6 +723,8 @@ INSERT INTO django_session VALUES('1bso8am6j0czf7ydda8vqyfhf6csyvge','.eJxVjDkOw
 INSERT INTO django_session VALUES('i6daf016xv0k5qrsqv9usl2mjchfc4u9','.eJxVjDkOwjAUBe_iGln2J15ESc8ZrL_YOIAcKU6qiLtDpBTQvpl5m0q4LjWtPc9pFHVRVp1-N0J-5rYDeWC7T5qntswj6V3RB-36Nkl-XQ_376Bir986ogMqBBGZXUQgDAXEGjIO0RouZCQwo89UzhIgl0EGB4HBO3bZq_cHGQ85MQ:1oP1V5:4_-oaOeK-GNtVUi5oFYJ_w4GCgoqrhvZimwl7w7S3ek','2022-09-02 12:53:23.796215');
 INSERT INTO django_session VALUES('ty298q8s3dfdrfv816spnp4r11mfczq6','.eJxVjDkOwjAUBe_iGln2J15ESc8ZrL_YOIAcKU6qiLtDpBTQvpl5m0q4LjWtPc9pFHVRVp1-N0J-5rYDeWC7T5qntswj6V3RB-36Nkl-XQ_376Bir986ogMqBBGZXUQgDAXEGjIO0RouZCQwo89UzhIgl0EGB4HBO3bZq_cHGQ85MQ:1oP6Sg:bOYBA15wRjbxsQp-rD7IXJ8V_3JN48RwedGzGD9j7dY','2022-09-02 18:11:14.223505');
 INSERT INTO django_session VALUES('1y47g7juz1pck80i4eh4ytfd0fnt6xj9','.eJxVjDkOwjAUBe_iGln2J15ESc8ZrL_YOIAcKU6qiLtDpBTQvpl5m0q4LjWtPc9pFHVRVp1-N0J-5rYDeWC7T5qntswj6V3RB-36Nkl-XQ_376Bir986ogMqBBGZXUQgDAXEGjIO0RouZCQwo89UzhIgl0EGB4HBO3bZq_cHGQ85MQ:1oRHpN:8brviw-4-6GDhMN7sEyUEO1PD6PB2i21CpNYlIb3uWY','2022-09-08 18:43:41.526834');
+INSERT INTO django_session VALUES('kxlrohpy0jimy9vhrxqo4d7dretq7eee','.eJxVjDkOwjAUBe_iGln2J15ESc8ZrL_YOIAcKU6qiLtDpBTQvpl5m0q4LjWtPc9pFHVRVp1-N0J-5rYDeWC7T5qntswj6V3RB-36Nkl-XQ_376Bir986ogMqBBGZXUQgDAXEGjIO0RouZCQwo89UzhIgl0EGB4HBO3bZq_cHGQ85MQ:1oSeCb:nQnioQ2HJn27qRUZrrpSJ93xzBqqsjM_DrJDvhONbe4','2022-09-12 12:49:17.673202');
+INSERT INTO django_session VALUES('0bjqytiyl6k27ji836bag9qwlh2wfaae','.eJxVjDkOwjAUBe_iGln2J15ESc8ZrL_YOIAcKU6qiLtDpBTQvpl5m0q4LjWtPc9pFHVRVp1-N0J-5rYDeWC7T5qntswj6V3RB-36Nkl-XQ_376Bir986ogMqBBGZXUQgDAXEGjIO0RouZCQwo89UzhIgl0EGB4HBO3bZq_cHGQ85MQ:1oTpGX:YacloO3l9XxHBouSPTwu2u3EfwHd0KoBKzY0HzxQnIc','2022-09-15 18:50:13.394398');
 CREATE TABLE IF NOT EXISTS "ficha" ("id_ficha" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "id_elemento" integer NULL REFERENCES "elemento" ("id_elemento") DEFERRABLE INITIALLY DEFERRED, "contenido" text NULL);
 INSERT INTO ficha VALUES(1,1,replace(replace('<p>Pr&oacute;logo</p>\r\n<p style="text-align: justify;">En pocas oportunidades se tienen satisfacciones como la que ahora se me presenta para resaltar un precioso material interactivo la del aprendizaje de la histolog&iacute;a, elaborado por el Dr. Marco Aliaga, un m&eacute;dico joven, que de esta manera muestra sus potencialidades para la academia y la ciencia, y de quien me enorgullezco haber sido su colaborador en &eacute;ste emprendimiento.</p>\r\n<p style="text-align: justify;">Es un hito para la historia de la Facultad porque el material se ha producido en la C&aacute;tedra, con fotograf&iacute;as obtenidas de las laminillas creadas por nuestras histotecn&oacute;logas y que tiene el objetivo de facilitar el aprendizaje y la ense&ntilde;anza de estudiantes y acad&eacute;micos.</p>\r\n<p style="text-align: justify;">Lo interesante, es que con este medio interactivo pretendemos promover el aprendizaje independiente y el uso de las nuevas tecnolog&iacute;as en sustituci&oacute;n del microscopio, al que le quedan reservadas otras funciones. De esta maneca, el estudiante podr&aacute; aprender histolog&iacute;a sin necesidad de contar con un microscopio facilitando las tareas de los docentes.</p>\r\n<p style="text-align: right;">Guido Zambrana Avila</p>\r\n<p style="text-align: right;">DECANO</p>','\r',char(13)),'\n',char(10)));
 INSERT INTO ficha VALUES(2,28,replace(replace('<p><strong>Epitelio plano simple. Endocardio. H.E.</strong></p>\r\n<p>Llamado tambi&eacute;n epitelio escamoso simple, se encuentra formado por un solo plano de c&eacute;lulas planas, donde predomina la altura sobre el ancho celular.</p>\r\n<p>La forma celular es poligonal que contrasta con un n&uacute;cleo ovalado y ocasionalmente aplanado. En esta foto se observa un perfil celular que demuestra su forma ahusada, donde cada c&eacute;lula es m&aacute;s delgada en sus extremos en relaci&oacute;n a la porci&oacute;n central, por la presencia del n&uacute;cleo. De acuerdo a donde se encuentre este tipo de epitelio tiene funciones como: el transporte del l&iacute;quido, el intercambio gaseoso, como membrana limitante, lubricaci&oacute;n, membrana de recubrimiento y la absorci&oacute;n de l&iacute;quidos. Algunos ejemplos de lugares donde se encuentra este epitelio son:</p>\r\n<p>- Conducto semicircular del o&iacute;do interno y el o&iacute;do medio.</p>\r\n<p>- Capa parietal de la c&aacute;psula de Bowman y asa de Henle en ri&ntilde;ones.</p>\r\n<p>- Alv&eacute;olos pulmonares.</p>\r\n<p>- Como mesotelio, recubriendo cavidades, como la pleural y peritoneal.</p>\r\n<p>- Como endotelio que recubre las cavidades internas del coraz&oacute;n, vasos sangu&iacute;neos y linf&aacute;ticos.</p>','\r',char(13)),'\n',char(10)));
@@ -1111,16 +1114,17 @@ INSERT INTO fotografia VALUES(191,'Retina, coroides, esclerótica. H.E.',191,'st
 INSERT INTO fotografia VALUES(192,'Cristalino. H.E.',192,'static/photos/Cristalino._H.E.__.jpg');
 INSERT INTO fotografia VALUES(193,'Órgano de Corti. H.E.',193,'static/photos/Organo_de_Corti.__H.E.__ATLAS_DE_GENESER.jpg');
 INSERT INTO fotografia VALUES(194,'Pabellón de oreja. H.E.',194,'static/photos/Pabellón_de_oreja._H.E.__.jpg');
+INSERT INTO fotografia VALUES(195,'prologo',1,'static/photos/Captura_de_pantalla_11.png');
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('django_migrations',26);
-INSERT INTO sqlite_sequence VALUES('django_admin_log',411);
+INSERT INTO sqlite_sequence VALUES('django_admin_log',412);
 INSERT INTO sqlite_sequence VALUES('django_content_type',9);
 INSERT INTO sqlite_sequence VALUES('auth_permission',36);
 INSERT INTO sqlite_sequence VALUES('auth_group',0);
 INSERT INTO sqlite_sequence VALUES('auth_user',1);
 INSERT INTO sqlite_sequence VALUES('elemento',220);
 INSERT INTO sqlite_sequence VALUES('ficha',194);
-INSERT INTO sqlite_sequence VALUES('fotografia',194);
+INSERT INTO sqlite_sequence VALUES('fotografia',195);
 CREATE UNIQUE INDEX "auth_group_permissions_group_id_permission_id_0cd325b0_uniq" ON "auth_group_permissions" ("group_id", "permission_id");
 CREATE INDEX "auth_group_permissions_group_id_b120cbf9" ON "auth_group_permissions" ("group_id");
 CREATE INDEX "auth_group_permissions_permission_id_84c5c92e" ON "auth_group_permissions" ("permission_id");

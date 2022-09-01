@@ -20,8 +20,13 @@
           {% if elemento.ele_id_elemento == None %}
           <li class="nav-item">
             <a
-              href="#submenu{{ elemento.id_elemento }}"
+              href=
+              {% if elemento.id_elemento != 1 %}
+              "#submenu{{ elemento.id_elemento }}"
               data-bs-toggle="collapse"
+              {% else %}
+              "{% url 'show' pk=elemento.id_elemento %}"
+              {% endif %}
               class="nav-link align-middle px-0"
             >
               <i class="fs-4 bi-table"></i>
@@ -36,8 +41,12 @@
               {% if item.ele_id_elemento.id_elemento == elemento.id_elemento %}
               <li>
                 <a
-                  href="#submenu{{ elemento.id_elemento }}sub{{ item.id_elemento }}"
+                  href={% if item.id_elemento > 27 %}
+                  "{% url 'show' pk=item.id_elemento %}"
+                  {% else %}
+                  "#submenu{{ elemento.id_elemento }}sub{{ item.id_elemento }}"
                   data-bs-toggle="collapse"
+                  {% endif %}
                   class="nav-link px-0"
                   ><i class="fs-4 bi-clock"></i>
                   <span class="d-none d-sm-inline">{{ item.nombre }}</span></a
