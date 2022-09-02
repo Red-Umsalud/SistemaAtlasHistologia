@@ -29,7 +29,7 @@
               {% endif %}
               class="nav-link align-middle px-0"
             >
-              <i class="fs-4 bi-table"></i>
+              <i class="fs-4 bi-bookshelf"></i>
               <span class="ms-1 d-none d-sm-inline">{{ elemento.nombre }}</span>
             </a>
             <ul
@@ -48,7 +48,7 @@
                   data-bs-toggle="collapse"
                   {% endif %}
                   class="nav-link px-0"
-                  ><i class="fs-4 bi-clock"></i>
+                  ><i class="fs-4 bi-book"></i>
                   <span class="d-none d-sm-inline">{{ item.nombre }}</span></a
                 >
                 <ul
@@ -60,8 +60,8 @@
                   {% if elem.ele_id_elemento.id_elemento == item.id_elemento %}
                   <li class="w-100">
                     <a href="{% url 'show' pk=elem.id_elemento %}" class="nav-link px-0">
-                      <span class="d-none d-sm-inline"
-                        >{{ elem.nombre }}</span
+                      <i class="fs-4 bi-circle"></i>
+                      <span class="d-none d-sm-inline">{{ elem.nombre }}</span
                       ></a
                     >
                   </li>
