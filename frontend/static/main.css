@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root,
 :root.color {
@@ -12,7 +12,7 @@
 
 /*css nav */
 .container-nav {
-  padding: 0;    
+  padding: 0;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -47,15 +47,15 @@
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
 }
 
-.container-nav .container-column .logo p{
+.container-nav .container-column .logo p {
   margin-left: 1rem;
   margin-top: 1rem;
   top: 13px;
   border-left: 5px solid rgba(27, 38, 44, 0.7);
   padding: 20px 0 20px 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 275;
-  color: #1B262C;
+  color: #1b262c;
   font-size: 20px;
   font-style: normal;
 }
@@ -67,33 +67,29 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
-.container-nav .container-column .options-nav ul{
+.container-nav .container-column .options-nav ul {
   padding: 0;
-  margin: 3rem 0 0 0; 
+  margin: 3rem 0 0 0;
 }
 
 .container-nav .container-column .options-nav ul li {
   padding: 1px;
   padding-bottom: 10px;
-  margin-left:2em;
+  margin-left: 2em;
   list-style: none;
   display: inline;
   font-weight: 300;
   box-sizing: border-box;
-
   border-bottom: 5px solid #cd495d;
 }
-.container-nav .container-column .options-nav ul li:first-child{
-  margin-left:0; 
+.container-nav .container-column .options-nav ul li:first-child {
+  margin-left: 0;
 }
-.container-nav .container-column .options-nav ul li:hover{
-  
-
-border-bottom: 5px solid #3F72AF;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+.container-nav .container-column .options-nav ul li:hover {
+  border-bottom: 5px solid #3f72af;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .container-nav .container-column .options-nav ul li a {
   text-decoration: none;
@@ -117,7 +113,9 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   font-size: 30px;
   color: rgb(34, 33, 33);
   line-height: 57px;
-  margin-right: 35px;
+  margin-right: 0px;
+  margin-top: 20px;
+  float: right;
   cursor: pointer;
   display: none;
 }
@@ -125,6 +123,15 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: none;
 }
 /*nav responsive*/
+
+@media (max-width: 1285px) {
+  .container-nav .container-column .logo p {
+    
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
 @media (max-width: 852px) {
   .container-nav {
     height: 6.5rem;
@@ -132,12 +139,13 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   .container-nav .container-column {
     height: auto;
     padding-left: 5%;
-  padding-right: 5%;
+    padding-right: 0;
+    flex-wrap: nowrap;
   }
   .container-nav .container-column .logo {
-    padding-top: 1px;
+    padding-top: 2px;
     flex-direction: row;
-    width: 75%;
+    width: 85%;
     flex-wrap: nowrap;
     align-items: center;
   }
@@ -146,26 +154,16 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     height: 72px;
   }
   .container-nav .container-column .logo p {
-    
-    visibility: hidden;
-  }
-  .container-nav .container-column .logo p::before{
-    content: "FMENT - UMSA";
-    margin-left: 1rem;
-    margin-top: 1rem;
-    border-left: 2px solid rgba(27, 38, 44, 0.7);
+    border-left: 3px solid rgba(27, 38, 44, 0.7);
     padding: 10px 0 10px 10px;
-    font-size: 10px;
-    font-weight: 400;
-    visibility: visible;
+    font-weight: 300;
+    font-size: 15px;
   }
-  
   .container-nav .container-column .options-nav {
     width: 10%;
+    flex-wrap: nowrap;
   }
-  
-  
-  
+
   .checkbtn {
     display: block;
   }
@@ -173,16 +171,40 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: fixed;
     width: 100%;
     height: auto;
-    background-color: #89beff;
-    z-index: 1;
-    top: 68px;
+    background-color: #334257;
+    z-index: 3;
+    top: 3rem;
     left: -100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     text-align: center;
     transition: all 0.5s;
+    padding-bottom: 10px;
   }
-  .container-nav .container-column .options-nav ul {
+  .container-nav .container-column .options-nav ul li {
     display: block;
     text-align: center;
+    padding: 10px;
+    text-align: center;
+    margin-left: 0;
+    border-bottom: none;
+    padding: 1rem;
+  }
+  .container-nav .container-column .options-nav ul li a {
+    font-weight: 300;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.807);
+  }
+  .container-nav .container-column .options-nav ul li:hover {
+    border-bottom: none;
+    filter: none;
+  }
+  .container-nav .container-column .options-nav ul li a:hover,
+  .container-nav .container-column .options-nav ul li a:focus,
+  .container-nav .container-column .options-nav ul li a:active {
+    color: #fff;
+    font-weight: 450;
   }
   #check:checked ~ .options-nav ul {
     left: 0;
@@ -190,4 +212,3 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /*css nsv end*/
-
