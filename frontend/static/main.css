@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root,
 :root.color {
@@ -12,7 +12,7 @@
 
 /*css nav */
 .container-nav {
-  padding: 0;
+  padding: 0;    
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -46,18 +46,20 @@
   mix-blend-mode: luminosity;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
 }
-.container-nav .container-column .logo p {
+
+.container-nav .container-column .logo p{
   margin-left: 1rem;
   margin-top: 1rem;
   top: 13px;
   border-left: 5px solid rgba(27, 38, 44, 0.7);
   padding: 20px 0 20px 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 275;
-  color: #1b262c;
+  color: #1B262C;
   font-size: 20px;
   font-style: normal;
 }
+
 .container-nav .container-column .options-nav {
   width: 45%;
   height: 100px;
@@ -65,17 +67,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content:flex-end;
 }
-.container-nav .container-column .options-nav ul {
+.container-nav .container-column .options-nav ul{
   padding: 0;
-  margin: 3rem 0 0 0;
+  margin: 3rem 0 0 0; 
 }
 
 .container-nav .container-column .options-nav ul li {
   padding: 1px;
   padding-bottom: 10px;
-  margin-left: 2em;
+  margin-left:2em;
   list-style: none;
   display: inline;
   font-weight: 300;
@@ -83,12 +85,15 @@
 
   border-bottom: 5px solid #cd495d;
 }
-.container-nav .container-column .options-nav ul li:first-child {
-  margin-left: 0;
+.container-nav .container-column .options-nav ul li:first-child{
+  margin-left:0; 
 }
-.container-nav .container-column .options-nav ul li:hover {
-  border-bottom: 5px solid #3f72af;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.container-nav .container-column .options-nav ul li:hover{
+  
+
+border-bottom: 5px solid #3F72AF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 }
 .container-nav .container-column .options-nav ul li a {
   text-decoration: none;
@@ -100,6 +105,7 @@
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+
 .container-nav .container-column .options-nav ul li a:hover,
 .container-nav .container-column .options-nav ul li a:focus,
 .container-nav .container-column .options-nav ul li a:active {
@@ -184,3 +190,4 @@
 }
 
 /*css nsv end*/
+
