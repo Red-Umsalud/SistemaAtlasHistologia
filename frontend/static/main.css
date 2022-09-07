@@ -12,15 +12,15 @@
 
 /*css nav */
 .container-nav {
-  padding: 0;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
   width: 100%;
   height: 9.7rem;
   background-color: var(--bg-color);
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
   margin-bottom: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .container-nav .container-column {
   display: flex;
@@ -126,9 +126,17 @@
 
 @media (max-width: 1285px) {
   .container-nav .container-column .logo p {
-    
     font-size: 12px;
     font-weight: 500;
+  }
+}
+@media (max-width: 958px) {
+  .container-nav .container-column .logo p {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .container-nav .container-column .logo {
+    flex-wrap: nowrap;
   }
 }
 
@@ -212,3 +220,68 @@
 }
 
 /*css nav end*/
+
+/*css intro*/
+.intro {
+  width: 100%;
+  height: 85vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.img-intro {
+  width: 45%;
+  float: right;
+  height: 85vh;
+  position: absolute;
+  background-image: linear-gradient(
+      rgba(171, 173, 177, 0.5),
+      rgba(4, 9, 30, 0.5)
+    ),
+    url(../static/img/intro.jpg);
+  background-size: contain;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+}
+.text-intro {
+  width: 55%;
+  float: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.text-intro h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 150px;
+  letter-spacing: 0.05em;
+  color: #1b262c;
+  mix-blend-mode: normal;
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 15%;
+  margin-left: 20%;
+  padding: 0px 0 10px 40px;
+  border-left: 10px solid #3f72af;
+}
+.text-intro-des {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 36px;
+  line-height: 54px;
+  text-align: right;
+  color: #262626;
+  margin-top: 6%;
+  margin-left: 38%;
+  padding: 0 20px 0 0;
+  border-right: 6px solid #E23E57;
+}
+/*css intro end*/
