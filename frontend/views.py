@@ -1,4 +1,3 @@
-from email import contentmanager
 from django.shortcuts import render
 from .models import Ficha, Elemento, Fotografia
 # Create your views here.
