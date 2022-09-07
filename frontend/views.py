@@ -1,3 +1,4 @@
+from email import contentmanager
 from django.shortcuts import render
 from .models import Ficha, Elemento, Fotografia
 # Create your views here.
@@ -18,3 +19,13 @@ def show(request, pk):
     principal = Elemento.objects.all()
     context['principal'] = principal
     return render(request,'menu.html', context=context)
+
+def refreshContent(request, pk):
+    context = {}
+    fotografias = Fotografia.objects.select_related('id_ficha').filter(id_ficha__id_elemento=pk)
+    print(fotografias)
+    context['elemento'] = fotografias
+    principal = Elemento.objects.all()
+    context['principal'] = principal
+    return render(request,'content.html', context=context)
+

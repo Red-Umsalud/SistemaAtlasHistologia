@@ -41,8 +41,12 @@
               {% if item.ele_id_elemento.id_elemento == elemento.id_elemento %}
               <li>
                 <a
-                  href={% if item.id_elemento > 27 %}
-                  "{% url 'show' pk=item.id_elemento %}"
+                  href=
+                  {% if item.id_elemento > 27 %}
+                  "{% url 'refreshContent' pk=item.id_elemento %}"
+                  hx-get="{% url 'refreshContent' pk=item.id_elemento %}"
+                  hx-trigger="click"
+                  hx-target="#contenido"
                   {% else %}
                   "#submenu{{ elemento.id_elemento }}sub{{ item.id_elemento }}"
                   data-bs-toggle="collapse"
@@ -59,7 +63,14 @@
                   {% for elem in principal %}
                   {% if elem.ele_id_elemento.id_elemento == item.id_elemento %}
                   <li class="w-100">
-                    <a href="{% url 'show' pk=elem.id_elemento %}" class="nav-link px-0">
+                    <a
+                      href=
+                      "{% url 'refreshContent' pk=elem.id_elemento %}"
+                      hx-get="{% url 'refreshContent' pk=elem.id_elemento %}"
+                      hx-trigger="click"
+                      hx-target="#contenido"                   
+                      class="nav-link px-0"
+                    >
                       <i class="fs-4 bi-circle"></i>
                       <span class="d-none d-sm-inline">{{ elem.nombre }}</span
                       ></a
@@ -77,7 +88,7 @@
       </div>
     </div>
     {% block focuscontent %}
-    <div class="col py-3">{% include 'content.html' %}</div>
+    <div class="col py-3" id="contenido">{% include 'content.html' %}</div>
     {% endblock focuscontent %}
   </div>
 </div>
