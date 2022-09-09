@@ -26,6 +26,10 @@
               data-bs-toggle="collapse"
               {% else %}
               "{% url 'show' pk=elemento.id_elemento %}"
+                  hx-get="{% url 'refreshContent' pk=elemento.id_elemento %}"
+                  hx-trigger="click"
+                  hx-target="#contenido"
+
               {% endif %}
               class="nav-link align-middle px-0"
             >
@@ -88,7 +92,9 @@
       </div>
     </div>
     {% block focuscontent %}
-    <div class="col py-3" id="contenido">{% include 'content.html' %}</div>
+    <div class="col py-3" id="contenido">
+        {% include 'content.html' %}
+    </div>
     {% endblock focuscontent %}
   </div>
 </div>
