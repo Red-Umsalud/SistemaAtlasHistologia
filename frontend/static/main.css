@@ -444,7 +444,6 @@
 }
 .card-autor .img-autor {
   position: absolute;
-  background-color: #cd495d;
   width: 172px;
   height: 161px;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
@@ -490,13 +489,49 @@
   font-weight: 200;
 }
 /*autores responsive*/
+@media (max-width: 1593px) {
+  .card-autor {
+    padding-left: 12%;
+  }
+  .card-autor .text-autor {
+    top: 25%;
+    padding-top: 35%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .card-autor .text-autor h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1255px) {
+  .card-autor {
+    padding-left: 15%;
+  }
+  .card-autor .text-autor h3 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1000px) {
+  .card-autor .text-autor {
+    width: 214px;
+    height: 150px;
+    top: 30%;
+    padding-top: 20%;
+  }
+  .card-autor .img-autor {
+    width: 112px;
+    height: 101px;
+  }
+}
+
 @media (max-width: 852px) {
   .autores {
-    height: auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    height: 85vh;
   }
+
   .autores .titulo-autor {
-    padding: 15% 0 0 25.2%;
+    padding: 0% 0 0 25.2%;
   }
   .autores .titulo-autor h2 {
     font-weight: 500;
@@ -507,14 +542,16 @@
     padding-left: 1.5rem;
   }
   .autores .container-autor {
+    padding-top: 5%;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 10%;
+    height: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
   .card-autor {
     flex-wrap: nowrap;
-    padding: 10%;
-    padding-top: 70%;
+    padding: 5%;
+    padding-top: 30%;
   }
   .card-autor .img-autor {
     width: 122px;
@@ -527,14 +564,58 @@
     height: 140px;
     top: 25%;
     border-radius: 33px;
-    padding-top: 100%;
+    padding-top: 120%;
   }
   .card-autor .text-autor h3 {
     color: #f9f7f7;
     font-family: "Poppins";
     font-weight: 300;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 23px;
+  }
+}
+@media (max-width: 768px) {
+  .autores {
+    height: 90vh;
+  }
+  .card-autor {
+    padding-top: 23%;
+  }
+  .card-autor .text-autor h3 {
+    line-height: 23px;
+  }
+  .card-autor .text-autor {
+    padding-top: 90%;
+  }
+}
+@media (max-width: 593px) {
+  .autores {
+    height: 80vh;
+  }
+  .card-autor {
+    padding-top: 33%;
+  }
+}
+@media (max-width: 500px) {
+  .autores {
+    height: 80vh;
+  }
+  .card-autor {
+    padding-top: 47%;
+  }
+  .card-autor .text-autor {
+    /*padding-top: 120%;*/
+  justify-content: flex-end;
+  }
+  .card-autor .text-autor h3 {
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .autores {
+    height: 90vh;
   }
 }
 /*css autores end*/
@@ -580,7 +661,6 @@
   background-image: url("./img/logo2.png");
   background-size: cover;
   background-position: center;
-  float: right;
   margin-left: 31.37%;
 }
 .footer-end {
@@ -602,4 +682,86 @@
 }
 
 /* css footer responsive*/
+@media (max-width: 1650px) {
+  .logo-medicina {
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 14.37%;
+  }
+  .logo-umsa {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 852px) {
+  .footer {
+    height: 160px;
+  }
+  .footer .footer-info {
+    flex-wrap: wrap;
+  }
+  .logo-umsa {
+    width: 43px;
+    height: 126px;
+    margin-left: 11%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .text-footer h3 {
+    font-weight: 300;
+    font-size: 8px;
+    line-height: 15px;
+    width: 290px;
+  }
+  .logo-medicina {
+    width: 78px;
+    height: 81px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 12.37%;
+  }
+  .footer-end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footer-end h4 {
+    font-size: 12px;
+    line-height: 1px;
+  }
+}
+@media (max-width: 592px) {
+  
+  .footer .footer-info {
+    flex-wrap: nowrap;
+  }
+  .logo-umsa {
+    width: 43px;
+    height: 126px;
+    margin-left: 11%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .text-footer h3 {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 13px;
+    width: 230px;
+  }
+  .footer-end h4 {
+    font-size: 9px;
+  }
+}
 /* css footer end*/
+.fh5co-loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../static/img/loader.gif") center no-repeat #fff;
+}

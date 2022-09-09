@@ -1,18 +1,23 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 <div class="intro">
-  <div class="text-intro">
+  <div class="text-intro" data-aos="fade-left"
+  data-aos-anchor="#example-anchor"
+  data-aos-offset="500"
+  data-aos-duration="1000">
     <h1>
       Atlas de <br />
       Histología
     </h1>
-    <p class="text-intro-des">Sitio de aprendizaje de<br />Histología</p>
+    <p class="text-intro-des" >Sitio de aprendizaje de<br />Histología</p>
   </div>
   <div class="img-intro"></div>
 </div>
 <div class="info">
-  <h2>Acerca del sitio</h2>
-  <div class="text">
+  <h2 >Acerca del sitio</h2>
+  <div class="text" data-aos="fade-right"
+  data-aos-offset="300"
+  data-aos-easing="ease-in-sine">
     <p>
       El atlas web de Histología es un medio por el cuál nuestros docentes y
       estudiantes podrán aprender sobre los tejidos del cuerpo humano. <br />
@@ -22,10 +27,12 @@
   </div>
 </div>
 <div class="autores">
-  <div class="titulo-autor">
+  <div class="titulo-autor" data-aos="fade-up"
+  data-aos-duration="1500">
     <h2>Autores</h2>
   </div>
-  <div class="container-autor">
+  <div class="container-autor" data-aos="fade-up"
+  data-aos-anchor-placement="top-bottom">
     <div class="card-autor">
       <div class="text-autor">
         <h3>Dr. Marco Antonio Aliaga Aguilar</h3>
