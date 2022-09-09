@@ -444,6 +444,7 @@
 }
 .card-autor .img-autor {
   position: absolute;
+  background-color: #cd495d;
   width: 172px;
   height: 161px;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
@@ -532,6 +533,7 @@
 
   .autores .titulo-autor {
     padding: 0% 0 0 25.2%;
+
   }
   .autores .titulo-autor h2 {
     font-weight: 500;
@@ -552,6 +554,7 @@
     flex-wrap: nowrap;
     padding: 5%;
     padding-top: 30%;
+
   }
   .card-autor .img-autor {
     width: 122px;
@@ -565,6 +568,7 @@
     top: 25%;
     border-radius: 33px;
     padding-top: 120%;
+    padding-top: 100%;
   }
   .card-autor .text-autor h3 {
     color: #f9f7f7;
@@ -618,6 +622,7 @@
     height: 90vh;
   }
 }
+
 /*css autores end*/
 /* css footer*/
 .footer {
@@ -765,3 +770,4 @@
   z-index: 9999;
   background: url("../static/img/loader.gif") center no-repeat #fff;
 }
+
