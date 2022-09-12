@@ -533,7 +533,6 @@
 
   .autores .titulo-autor {
     padding: 0% 0 0 25.2%;
-
   }
   .autores .titulo-autor h2 {
     font-weight: 500;
@@ -554,7 +553,6 @@
     flex-wrap: nowrap;
     padding: 5%;
     padding-top: 30%;
-
   }
   .card-autor .img-autor {
     width: 122px;
@@ -609,7 +607,7 @@
   }
   .card-autor .text-autor {
     /*padding-top: 120%;*/
-  justify-content: flex-end;
+    justify-content: flex-end;
   }
   .card-autor .text-autor h3 {
     font-size: 13px;
@@ -739,7 +737,6 @@
   }
 }
 @media (max-width: 592px) {
-  
   .footer .footer-info {
     flex-wrap: nowrap;
   }
@@ -771,6 +768,61 @@
   background: url("../static/img/loader.gif") center no-repeat #fff;
 }
 
+<<<<<<< HEAD
 #pruebaestilo {
   color:red;
+=======
+/* slide css*/
+#contenido{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+#containerslide {
+  background: rgb(34, 87, 126);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 87, 126, 1) 20%,
+    rgba(85, 132, 172, 1) 100%
+  );
+}
+#inicio {
+  font-size: 60px;
+  font-family: "Poppins";
+  font-weight: 200;
+  text-align: center;
+}
+#cardtitulo{
+  font-size: 70px;
+  font-family: "Poppins";
+  font-weight: 300;
+  color: #1B262C;
+  text-align: center;
+  padding: 2%;
+}
+#cardcontenido{
+  font-size: 20px;
+  padding: 6%;
+  font-weight: 400;
+  font-family: "Poppins";
+}
+#cardcontenido{
+  overflow-wrap: break-word;
+}
+@media (max-width: 592px) {
+  #containerslide {
+   width: 30%;
+  }
+
+  #cardtitulo {
+    font-size: 30px;
+  }
+  #cardcontenido{
+    font-size: 16px;
+  }
+>>>>>>> e70961456d40343d8433ca74c20d72a9657cb7d8
 }
