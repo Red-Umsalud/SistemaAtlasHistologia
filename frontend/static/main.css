@@ -768,10 +768,6 @@
   background: url("../static/img/loader.gif") center no-repeat #fff;
 }
 
-<<<<<<< HEAD
-#pruebaestilo {
-  color:red;
-=======
 /* slide css*/
 #contenido{
   display: flex;
@@ -824,5 +820,4 @@
   #cardcontenido{
     font-size: 16px;
   }
->>>>>>> e70961456d40343d8433ca74c20d72a9657cb7d8
 }
