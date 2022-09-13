@@ -1,15 +1,20 @@
-{% load static %}
-
-{% for fotografia in elemento %}
+{% load static %} {% for fotografia in elemento %}
 
 <div class="container">
-    <div class="card">
-    <img src="..{{ fotografia.fotografia.url }}" class="card-img-top" alt="" />
-    <div class="card-body">
-        <h5 class="card-title">{{ fotografia.id_ficha.id_elemento.nombre }}</h5>
-    <p class="card-text">{{ fotografia.id_ficha.contenido | safe }}</p>
-    <a href="#" class="btn btn-primary">Presioname</a>
+  <div class="card" id="contenido">
+    <div>
+      <h5 class="card-title" id="cardtitulo">
+        {{ fotografia.id_ficha.id_elemento.nombre }}
+      </h5>
+      <img
+        src="..{{ fotografia.fotografia.url }}"
+        class="card-img-top"
+        alt=""
+      />
     </div>
+    <div class="card-body" id="cardcontenido">
+      <p class="card-text">{{ fotografia.id_ficha.contenido | safe }}</p>
     </div>
+  </div>
 </div>
 {% endfor %}
