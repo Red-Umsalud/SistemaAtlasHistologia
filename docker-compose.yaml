@@ -1,15 +1,10 @@
-version: "3.3"
+version: "3.8"
 
 services:
-  postgres:
-    image: postgres
+  django_app:
+    build: .
+    container_name: webapp_django
     ports:
-      - "5432:5432"
+      - "5000:5000"
     restart: unless-stopped
-    environment:
-      POSTGRES_PASSWORD: admin
-      POSTGRES_USER: galo
-      POSTGRES_DB: db_histologia
-      DATABASE_HOST: 127.0.0.1
-    volumes:
-      - ./database:/var/lib/postgresql/data
+    command: python manage.py runserver 0.0.0.0:5000
