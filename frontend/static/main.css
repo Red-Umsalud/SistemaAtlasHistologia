@@ -769,14 +769,13 @@
 }
 
 /* slide css*/
-#contenido{
+#contenido {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
 }
-
 
 #containerslide {
   background: rgb(34, 87, 126);
@@ -792,32 +791,32 @@
   font-weight: 200;
   text-align: center;
 }
-#cardtitulo{
+#cardtitulo {
   font-size: 70px;
   font-family: "Poppins";
   font-weight: 300;
-  color: #1B262C;
+  color: #1b262c;
   text-align: center;
   padding: 2%;
 }
-#cardcontenido{
+#cardcontenido {
   font-size: 20px;
   padding: 6%;
   font-weight: 400;
   font-family: "Poppins";
 }
-#cardcontenido{
+#cardcontenido {
   overflow-wrap: break-word;
 }
 @media (max-width: 592px) {
   #containerslide {
-   width: 30%;
+    width: 30%;
   }
 
   #cardtitulo {
     font-size: 30px;
   }
-  #cardcontenido{
+  #cardcontenido {
     font-size: 16px;
   }
 }
