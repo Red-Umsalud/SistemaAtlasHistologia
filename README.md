@@ -2,6 +2,25 @@
 
 ## Documentación Básica :)
 
+### Ejecución con Docker y docker-compose
+
+Solo se requiere que los servicios de docker y docker-compose se encuentren activos. Si no están activos se los debe iniciar:
+
+```sh
+systemctl start docker
+```
+
+Finalmente se ejecuta en la ubicación del archivo `docker-compose.yaml`:
+```sh
+docker-compose up -d
+```
+Donde `-d` iniciará el servicio en segundo plano pudiendo así cerrar la sesión ssh.
+
+Para detener el servicio:
+```sh
+docker-compose down
+```
+
 ### Replicación del Entorno de Trabajo
 
 
@@ -38,5 +57,7 @@ En el desarrollo del sistema se utilizó:
 - Bootstrap 4
 - HTMX
 - Django ORM
+
+
 
 
